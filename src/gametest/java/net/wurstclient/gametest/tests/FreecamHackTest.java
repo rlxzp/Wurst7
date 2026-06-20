@@ -266,4 +266,12 @@ public final class FreecamHackTest extends SingleplayerTest
 		failWithScreenshot("freecam_entity_interaction_failed",
 			"Freecam entity interaction test failed", errorMessage);
 	}
+
+	// Added this helper for myself and i think it will be a good idea to push it, It reduces dupli codes when we enable free cam or disable freecam 
+	private void toggleFreecam()
+	{
+		input.pressKey(GLFW.GLFW_KEY_U);
+		context.waitTick();
+		world.waitForChunksRender();
+	}
 }
